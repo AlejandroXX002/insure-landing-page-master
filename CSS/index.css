@@ -1,6 +1,143 @@
-:root {
+/* base styles */
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;1,700&display=swap");
+
+.topnav a:hover {
+	border: hsl(0, 0%, 98%) 2px solid;
+	box-sizing: border-box;
 }
 
-/* animated mcbutton */
+.burger-container:first-child {
+	font-family: "DM Serif Display", serif;
+	font-weight: 400;
+	font-size: 30px;
+}
 
-/* McButton */
+img {
+	width: 100%;
+	margin: auto;
+	display: block;
+}
+
+main {
+	background-color: hsl(0, 0%, 98%);
+	display: grid;
+}
+/* media queries */
+@media screen and (max-width: 800px) {
+	.topnav {
+		background-color: hsl(270, 9%, 17%);
+		overflow: hidden;
+	}
+
+	a {
+		width: 240px;
+	}
+
+	nav {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		background: url(../images/bg-pattern-mobile-nav.svg);
+		background-repeat: no-repeat;
+		background-position: bottom center;
+		background-size: 100%;
+	}
+
+	nav a:last-child {
+		margin-bottom: 270px;
+	}
+
+	.topnav a {
+		color: #f2f2f2;
+		padding: 0.5em;
+		margin: 0.5em auto;
+		text-decoration: none;
+		font-size: 17px;
+		display: none;
+	}
+
+	.burger-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 60px;
+		padding: 0 20px;
+		box-sizing: border-box;
+		color: white;
+	}
+
+	.topnav.responsive a {
+		display: block;
+		text-align: center;
+	}
+
+	.plans-container {
+		background: url(../images/bg-pattern-intro-left-mobile.svg) no-repeat
+				left top,
+			url(../images/bg-pattern-intro-right-mobile.svg) no-repeat right
+				bottom,
+			linear-gradient(hsl(256, 26%, 20%) 0% 74%, hsl(0, 0%, 98%) 74% 100%);
+		background-size: auto;
+		height: 670px;
+		color: white;
+		margin: auto;
+		text-align: center;
+		box-sizing: border-box;
+		padding-top: 6.5em;
+	}
+
+	.plans-container div {
+		font-family: "Karla", sans-serif;
+		line-height: 1.5em;
+		font-size: 16px;
+		width: 90%;
+		margin: 0 auto 25px;
+	}
+
+	.plans-container a {
+		font-family: "Karla", sans-serif;
+		text-decoration: none;
+		color: white;
+		border: hsl(0, 0%, 98%) 2px solid;
+		padding: 8px 23px;
+		display: block;
+		margin: auto;
+		width: -moz-fit-content;
+	}
+
+	h2 {
+		margin: 0 auto 20px;
+		font-weight: 700;
+		font-size: 43px;
+		font-family: "DM Serif Display", serif;
+		line-height: 1em;
+		width: 90%;
+		margin: 0 auto 50px;
+	}
+
+	hr {
+		width: 40%;
+		margin: 13em auto;
+		color: grey;
+	}
+
+	.pros-container {
+		text-align: center;
+		margin: 0 auto 3em;
+	}
+
+	.pros-container div {
+		font-family: "Karla", sans-serif;
+		color: hsl(216, 30%, 68%);
+	}
+
+	h3 {
+		font-family: "DM Serif Display", serif;
+		font-size: 30px;
+		margin-bottom: 12px;
+	}
+
+	.info-container {
+		background: url();
+	}
+}

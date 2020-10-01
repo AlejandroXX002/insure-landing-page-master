@@ -1,40 +1,33 @@
-// codigo que oculta los iconos de hamburguresa y "X" que deberian cambiar de acuerdo a
-// si está contraido o desplegado el menu
+let hamburger = document.querySelectorAll(".swapper");
 
-let burgerIndex = 1;
-burgerSwaper(burgerIndex);
-
-function plusSlides(n) {
-	burgerSwaper((burgerIndex += n));
+for (let i = 0; i < hamburger.length; i++) {
+	hamburger[i].addEventListener("click", () => {
+		let toggable = document.getElementById("myTopnav");
+		if (toggable.className === "topnav") {
+			toggable.className += " responsive";
+		} else {
+			toggable.className = "topnav";
+		}
+	});
 }
 
-function burgerSwaper(n) {
-	let slides = document.getElementsByClassName("mc-swap");
-	if (n > slides.length) {
-		burgerIndex = 1;
+let svgIndex = 1;
+showSvg(svgIndex);
+
+function plusIndex(n) {
+	showSvg((svgIndex += n));
+}
+function showSvg(n) {
+	let svg = document.getElementsByClassName("swapper");
+	if (n > svg.length) {
+		svgIndex = 1;
 	}
 	if (n < 1) {
-		7;
-		burgerIndex = slides.length;
+		svgIndex = svg.length;
 	}
-	for (const slider of slides) {
-		("");
+	for (const slider of svg) {
 		slider.style.display = "none";
 	}
 
-	slides[burgerIndex - 1].style.display = "";
+	svg[svgIndex - 1].style.display = "";
 }
-
-// codigo que deberia ejecutarse con un click para desplegar o contraer el menú
-
-function myFunction() {
-	var x = document.getElementById("myTopnav");
-	if (x.className === "topnav") {
-		x.className += " responsive";
-	} else {
-		x.className = "topnav";
-	}
-}
-
-// ya existe un click en los dos svg que oculta la "X" y la "hamburguesa"
-// aun no tengo el click que hace ejecutar "myfunction() porque no supe que hacer"
