@@ -2,11 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;1,700&display=swap");
 
-.topnav a:hover {
-	border: hsl(0, 0%, 98%) 2px solid;
-	box-sizing: border-box;
-}
-
 /* TODO: Rember that there is something called CSS Reset
  * https://meyerweb.com/eric/tools/css/reset/
 */
@@ -17,21 +12,19 @@
 	font-size: 30px;
 }
 
-img {
-	width: 100%;
-	margin: auto;
-	display: block;
-}
-
-main {
-	background-color: white;
-	display: grid;
+a {
+	text-decoration: none;
 }
 /* media queries */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 610px) {
 	.topnav {
 		background-color: hsl(270, 9%, 17%);
 		overflow: hidden;
+	}
+
+	.topnav a:hover {
+		outline: hsl(0, 0%, 98%) 2px solid;
+		box-sizing: border-box;
 	}
 
 	nav a {
@@ -40,7 +33,7 @@ main {
 
 	nav {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		grid-template-columns: repeat(auto-fit, 1fr);
 		background: url(../images/bg-pattern-mobile-nav.svg);
 		background-repeat: no-repeat;
 		background-position: bottom center;
@@ -53,11 +46,11 @@ main {
 
 	.topnav a {
 		color: #f2f2f2;
-		padding: 0.5em;
-		margin: 0.5em auto;
-		text-decoration: none;
-		font-size: 17px;
 		display: none;
+		font-size: 17px;
+		margin: 0.5em auto;
+		padding: 0.5em;
+		overflow: hidden;
 	}
 
 	.burger-container {
@@ -74,6 +67,12 @@ main {
 	.topnav.responsive a {
 		display: block;
 		text-align: center;
+	}
+
+	img {
+		width: 100%;
+		margin: auto;
+		display: block;
 	}
 
 	.plans-container {
@@ -101,7 +100,6 @@ main {
 
 	.plans-container a {
 		font-family: "Karla", sans-serif;
-		text-decoration: none;
 		color: white;
 		border: hsl(0, 0%, 98%) 2px solid;
 		padding: 8px 23px;
@@ -111,13 +109,12 @@ main {
 	}
 
 	h2 {
-		margin: 0 auto 20px;
 		font-weight: 700;
 		font-size: 43px;
 		font-family: "DM Serif Display", serif;
 		line-height: 1em;
-		width: 90%;
-		margin: 0 auto 50px;
+		margin-left: 0 auto 50px;
+		text-align: center;
 	}
 
 	.plans-container hr {
@@ -126,14 +123,13 @@ main {
 		color: grey;
 	}
 
-	.pros-container {
+	.single-container {
 		text-align: center;
 		margin: 0 auto 3em;
 		width: 95%;
-		margin: 0 auto 3em;
 	}
 
-	.pros-container div {
+	.single-container div {
 		font-family: "Karla", sans-serif;
 		color: hsl(216, 30%, 68%);
 	}
@@ -178,6 +174,10 @@ main {
 		font-size: 16px;
 	}
 
+	.bg-right {
+		display: none;
+	}
+
 	footer {
 		background: hsl(0, 0%, 98%) url(../images/bg-pattern-footer-mobile.svg)
 			top left no-repeat;
@@ -207,11 +207,217 @@ main {
 
 	footer a {
 		display: block;
-		text-decoration: none;
+
 		color: black;
 		letter-spacing: 2px;
 		font-weight: 700;
 		font-size: 14px;
 		line-height: 2em;
+	}
+}
+
+@media screen and (min-width: 611px) {
+	.burger-icons {
+		display: none;
+	}
+
+	.burger-container:first-child {
+		display: inline-block;
+	}
+
+	nav {
+		display: inline-flex;
+		justify-content: space-between;
+		width: 35%;
+		flex-wrap: wrap;
+	}
+
+	.topnav {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 80%;
+		margin: auto;
+		font-size: 12px;
+		font-family: "Karla", sans-serif;
+	}
+
+	.topnav a {
+		color: hsl(273, 4%, 51%);
+		padding: 0.5em 1em;
+	}
+
+	.topnav a:hover {
+		outline: hsl(270, 9%, 17%) 2px solid;
+		box-sizing: border-box;
+	}
+
+	main {
+		background: url(../images/bg-pattern-intro-left-desktop.svg) no-repeat
+				center left,
+			linear-gradient(hsl(256, 26%, 20%) 0% 43%, hsl(0, 0%, 100%) 43% 100%);
+		background-size: 10%;
+		background-position: 0% 32%;
+		/* "three thre three three"
+			"snappy afordable people ."
+			"seven seven seven ."; */
+		display: grid;
+		padding-bottom: 7em;
+	}
+
+	.intro-container:not(.bg-right) {
+		display: grid;
+		grid-template-areas:
+			"one two"
+			"three .  ";
+		margin: auto;
+		width: 80%;
+		padding: 100px 100px 0;
+		grid-template-columns: 1fr 1fr;
+		color: hsl(0, 0%, 98%);
+	}
+
+	h2:not(.benefits) {
+		font-weight: 700;
+		font-size: 50px;
+		font-family: "DM Serif Display", serif;
+		line-height: 1em;
+		width: moz-fit-content;
+		margin-bottom: 10px;
+	}
+
+	.plans-container div {
+		font-family: "Karla", sans-serif;
+		margin-bottom: 1.5em;
+		font-size: 15px;
+	}
+
+	.plans-container a {
+		outline: 2px solid white;
+		padding: 7px 15px;
+		font-family: "Karla", sans-serif;
+		font-weight: 700;
+		color: white;
+		font-size: 12px;
+	}
+
+	.plans-container {
+		grid-area: one;
+		justify-self: start;
+		box-sizing: border-box;
+	}
+
+	.plans-container hr {
+		margin: 20em auto 0 0;
+		width: 20%;
+	}
+
+	.img-family {
+		grid-area: two;
+		justify-self: end;
+		width: 80%;
+	}
+
+	.bg-right {
+		position: absolute;
+		justify-self: end;
+		height: 75%;
+	}
+
+	.benefits {
+		grid-area: three;
+		color: black;
+		margin-top: 1em;
+		font-family: "DM Serif Display", serif;
+		font-size: 50px;
+	}
+
+	.pros-container {
+		display: inline-flex;
+		margin: 0 auto 8em;
+		width: 80%;
+		flex-grow: 1;
+	}
+
+	.single-container {
+		margin-right: 1em;
+
+		/* width: 330px; */
+	}
+
+	.info-container {
+		width: 80%;
+		margin: 0 auto;
+		height: 210px;
+		background: url(../images/bg-pattern-how-we-work-desktop.svg) no-repeat
+			center right hsl(256, 26%, 20%);
+		color: white;
+		font-family: "DM Serif Display", serif;
+		display: flex;
+		justify-content: space-between;
+		box-sizing: border-box;
+		padding: 0 3.5em;
+		align-items: center;
+	}
+
+	.info-container span {
+		font-size: 50px;
+	}
+
+	.info-container a {
+		color: white;
+		outline: solid white 2px;
+		padding: 0.5em 1em;
+	}
+
+	footer {
+		background: url(../images/bg-pattern-footer-desktop.svg) no-repeat top
+			left hsl(0, 0%, 98%);
+		font-family: "DM Serif Display", serif;
+		background-size: 30%;
+		padding-bottom: 3em;
+	}
+
+	footer > section:first-child {
+		display: flex;
+		justify-content: space-between;
+		width: 80%;
+		margin: auto;
+		align-items: center;
+		font-size: 20px;
+		letter-spacing: 5px;
+	}
+
+	footer a {
+		color: hsl(270, 9%, 17%);
+		font-family: "Karla", sans-serif;
+		font-weight: 700;
+		font-size: 12px;
+		letter-spacing: 3px;
+		line-height: 2em;
+	}
+
+	h4 {
+		color: hsl(273, 4%, 51%);
+	}
+
+	footer svg {
+		margin-right: 1em;
+	}
+
+	footer hr {
+		width: 80%;
+	}
+
+	.links-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	.links-container section {
+		display: flex;
+		flex-direction: column;
 	}
 }

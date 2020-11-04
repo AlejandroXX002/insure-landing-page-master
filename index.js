@@ -1,32 +1,30 @@
-let hamburgerIcons = document.querySelectorAll(".swapper");
+let hamburgerIcons = document.querySelectorAll(".burger-icons");
 let toggable = document.getElementById("myTopnav");
 let svgIndex = 1;
 
-
 const showSvg = (n) => {
-	let svg = document.getElementsByClassName("swapper");
-	if (n > svg.length) {
+	let svgs = document.getElementsByClassName("burger-icons");
+	if (n < svgs.length) {
 		svgIndex = 1;
+	} else {
+		svgIndex = svgs.length;
 	}
-	if (n < 1) {
-		svgIndex = svg.length;
-	}
-	for (const slider of svg) {
-		slider.style.display = "none";
+	for (const svg of svgs) {
+		svg.style.display = "none";
 	}
 
-	svg[svgIndex - 1].style.display = "";
-}
+	svgs[svgIndex - 1].style.display = "";
+};
 
 const plusIndex = (n) => {
 	showSvg((svgIndex += n));
-}
+};
 
 for (const icon of hamburgerIcons) {
-	icon.addEventListener('click', () => {
-		(toggable.className === "topnav") ?
-			toggable.className += " responsive" :
-			toggable.className = "topnav";
+	icon.addEventListener("click", () => {
+		toggable.className === "topnav"
+			? (toggable.className += " responsive")
+			: (toggable.className = "topnav");
 	});
 }
 
